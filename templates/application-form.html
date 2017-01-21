@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet" href="static/styles.css">
+    <title>Application Form</title>
+</head>
+<body>
+  <h1>Application Form</h1><br>
+  <P> Apply for a job at Ubermelon!</P><br>
+<!--   <form class="outlined" action="application-form" method="POST"> -->
+  <form class="outlined" action="application-success">
+    <label for="firstname">First Name:</label>
+      <input id="firstname" type="text" name="firstname"><br> <!-- name="textfield"? -->
+    <label for="lastname">Last Name:</label>
+      <input id="lastname" type="text" name="lastname"><br>
+    <label for="salaryreq">Salary Requirement:</label> 
+<!--       <input id="salaryreq" type="number" min="1" step="any" name="salaryreq"><br> -->
+      <input id="salaryreq" type="number" lang="nb" name="salaryreq"><br>
+    <label for="jobtitle">Job Title:</label>
+      <select id="jobtitle" name="jobtitle">
+<!--         {% if jobs %} -->
+        {% for job in jobs %}
+        <option value="{{job}}">{{ job }}</option>
+        {% endfor %}
+        <!-- {% endif %} -->
+      </select>
+    <input type="submit">
+  </form>
+</body>
+</html>

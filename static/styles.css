@@ -1,1 +1,9 @@
-/* Your styles can go here. */
+input {
+  background-color : yellow; 
+}
+#lastname {
+    font-weight: bold
+}
+.outlined {
+    border: 2px solid black;
+}
