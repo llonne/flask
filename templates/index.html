@@ -1,12 +1,6 @@
-<!doctype html>
-<html>
-<head>
-    <title>Sample Home Page</title>
-</head>
-<body>
-
-<h1>This is the sample home page.</h1>
-<a href="application-form">Click here for the Application Form.</a>
-
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}Sample Home Page{% endblock %}
+{% block content %}
+    <h3>Join the team...<h3>
+    <p><a href="application-form">Click here to apply.</a></p>
+{% endblock %}

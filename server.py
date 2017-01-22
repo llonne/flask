@@ -25,15 +25,14 @@ def application_form():
     return render_template("application-form.html", jobs=job_list)
 
 
-# @app.route("/application-success", methods=['GET', 'POST'])
-@app.route("/application-success")
+@app.route("/application-success", methods=["POST"])
 def application_success():
     """Show application form."""
 
-    fname = request.args.get("firstname")
-    lname = request.args.get("lastname")
-    salary = format_currency(float(request.args.get("salaryreq")))
-    title = request.args.get("jobtitle")
+    fname = request.form.get("firstname")
+    lname = request.form.get("lastname")
+    salary = format_currency(float(request.form.get("salaryreq")))
+    title = request.form.get("jobtitle")
 
     return render_template("application-response.html",
                            first_name=fname,
@@ -43,6 +42,7 @@ def application_success():
 
 
 def format_currency(value):
+    """Convert number to currency format."""
     return "${:,.2f}".format(value)
 
 if __name__ == "__main__":
